@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+com.flow:
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./testDb/db
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+
+  h2:
+    console:
+      enabled: true
+
+keycloak:
+  realm: Flow
+  auth-server-url: http://localhost:8180/auth
+  ssl-required: external
+  resource: vaccination-app
+  credentials.secret: 52d7f9e4-e7c8-4f9a-8b4f-f86a9796d219
+  use-resource-role-mappings: true
+  bearer-only: true
+
